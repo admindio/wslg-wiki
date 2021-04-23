@@ -83,3 +83,7 @@ There is a known issue at the moment (https://github.com/microsoft/wslg/issues/4
 ```
 ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix
 ```
+
+# Still having a problem?
+
+Please open an issue and attach your /mnt/wslg/weston.log file.
