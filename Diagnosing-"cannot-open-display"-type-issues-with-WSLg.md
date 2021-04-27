@@ -1,6 +1,15 @@
-Thank you for your interest in WSLg.
-
 On category of issues that we have seen popping up is folks having trouble getting their GUI application to properly connect to WSLg's X server. This page is meant as a quick guide to diagnose this type of connection issue as well as list the currently known problem we're working on fixing.
+
+# Verify you are running on Windows build 21364+
+From a Windows command prompt, type _ver_ to verify which build you are running.
+
+```
+E:\wsl>ver
+
+Microsoft Windows [Version 10.0.21367.1000]
+```
+
+You must be running on Windows build version 21364+ for WSLg to work. This version of Windows is currently only available through the Windows Insider program. See https://insider.windows.com/en-us/ to join the insider program and help us validate pre-released version of Windows.
 
 # **DISPLAY** environment variable
 
@@ -86,4 +95,30 @@ ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix
 
 # Still having a problem?
 
-Please open an issue and attach your /mnt/wslg/weston.log file.
+Please open an issue and include the following
+
+* Run the following command and provide the output:
+
+```
+spronovo@OFFICE:~$ cat /mnt/wslg/versions.txt
+WSLg ( x86_64 ): <current>
+Mariner: VERSION="1.0.20210224"
+FreeRDP: 5f083fa0b97d433d6204985f6047886e29c1c61e
+weston: 16de531f00aa3dfd17e0de74c8f49e9fd7cec617
+pulseaudio: 2f0f0b8c3872780f15e275fc12899f4564f01bd5
+mesa: 2ad0684038f5732f7e4bd1a391ec9d833685fb48
+
+spronovo@OFFICE:~$ echo $DISPLAY
+:0
+
+spronovo@OFFICE:~$ ls -la /tmp/.X11-unix
+lrwxrwxrwx 1 root root 19 Apr 21 12:12 /tmp/.X11-unix -> /mnt/wslg/.X11-unix
+
+spronovo@OFFICE:~$ ls -la /tmp/.X11-unix/
+total 0
+drwxrwxrwx 2 root     root   60 Apr 21 12:22 .
+drwxrwxrwt 5 root     root  220 Apr 21 12:22 ..
+srwxrwxrwx 1 spronovo users   0 Apr 21 12:22 X0
+```
+
+* Attach your /mnt/wslg/weston.log file
