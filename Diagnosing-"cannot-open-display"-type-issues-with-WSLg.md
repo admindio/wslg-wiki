@@ -40,6 +40,7 @@ This link is setup during WSL's INIT. If this directory doesn't exist, something
 You can re-create the link manually to try things out.
 
 ```
+sudo rm -r /tmp/.X11-unix
 ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix
 ```
 
