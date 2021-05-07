@@ -69,7 +69,7 @@ pulseaudio: 2f0f0b8c3872780f15e275fc12899f4564f01bd5
 mesa:
 ```
 
-## Complex monitor arrangement
+## Complex monitor arrangement (Fixed in WSLg 1.0.19)
 There is a known issue in WSLg 1.0.17 that if you have a combination of vertically and horizontally aligned monitor, Weston may hit an invalid assert and restart. Effectively crashing and restarting the X server on every connection attempt.
 
 You can verify if this is what you are hitting per below
