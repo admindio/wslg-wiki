@@ -11,7 +11,11 @@ WESTON_DEBUG_PROTOCOL=true
 WESTON_LOG_SCOPES=timeline
 ;
 ;enable Xwayland debug
-;WESTON_LOG_SCOPES=xwm-wm-x11
+WESTON_LOG_SCOPES=xwm-wm-x11
+;
+;configure idle timeout
+;default is 300 seconds
+WESTON_IDLE_TIME=300
 ;
 ;rdp-backend debug level
 ;level 0 to 5
@@ -30,6 +34,9 @@ WESTON_RDP_DEBUG_CLIPBOARD_LEVEL=5
 ;monitor refresh rate
 ;60 or 144
 WESTON_RDP_MONITOR_REFRESH_RATE=144
+;
+;start menu integration (Linux app in Windows start menu)
+WESTON_RDP_DISABLE_APPLIST=true
 ;
 ;shared memory
 WESTON_RDP_DISABLE_SHARED_MEMORY=true
@@ -86,4 +93,8 @@ XKB_LOG_LEVEL=debug
 ;xkb compiler
 ;0 to 10
 XKB_LOG_VERBOSITY=10
+;
+;disable GPU in system-distro
+;(must be disabled in user-distro as well, exporting this env.)
+LIBGL_ALWAYS_SOFTWARE=1
 ```
