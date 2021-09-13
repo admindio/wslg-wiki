@@ -97,4 +97,7 @@ XKB_LOG_VERBOSITY=10
 ;disable GPU in system-distro
 ;(must be disabled in user-distro as well, exporting this env.)
 LIBGL_ALWAYS_SOFTWARE=1
+;
+;restart weston compositor and Xwayland by Left-Ctrl + Left-Atl + Backspace
+WESTON_RDPRAIL_SHELL_ALLOW_ZAP=true
 ```
