@@ -1,4 +1,4 @@
-Various debugging options for WSLg can be configured by editing the file ```c:\ProgramData\Microsoft\WSL\.wslgconfig```. This config file is read during WSLg launch, so any change require WSLg to be restarted for the changes to take effect (```wsl --shutdown```).
+Various debugging options for WSLg can be configured by editing the file ```c:\ProgramData\Microsoft\WSL\.wslgconfig``` (for inbox WSL), or ```c:\Users\[your user name]\.wslgconfig``` (for WSL installed from Store). This config file is read during WSLg launch, so any change require WSLg to be restarted for the changes to take effect (```wsl --shutdown```).
  
 ```
 [system-distro-env]
