@@ -1,5 +1,3 @@
-# GPU selection in WSLg
-
 This article describes the GPU selection logic within MESA when running against the d3d12 backend used within WSL/WSLg. The below only apply to MESA and not to other APIs such as CUDA, L0, OpenVINO, etc...
 
 All of the changes described here have been upstream to MESA a while back. Make sure to update/upgrade your distro to pick up the latest set of changes. Depending on which distro you are using and when it last picked up update to the MESA libraries, not all of these changes may be available yet for your distro. 
