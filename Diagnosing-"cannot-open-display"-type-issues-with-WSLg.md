@@ -11,6 +11,19 @@ Microsoft Windows [Version 10.0.21367.1000]
 
 You must be running on Windows build version 21364+ for WSLg to work. This version of Windows is currently only available through the Windows Insider program. See https://insider.windows.com/en-us/ to join the insider program and help us validate pre-released version of Windows.
 
+# Verify guiApplications is not disabled in .wslconfig
+Verify that in your .wslconfig in Windows `%USERPROFILE%\.wslconfig` that you don't have guiApplications disabled. The following will result in a "cannot open display" error in WSL.
+
+```
+[wsl2]
+guiApplications = false
+```
+Set the value to `true`. Then restart WSL from a Windows Command prompt:
+
+```
+wsl --shutdown
+```
+
 # **DISPLAY** environment variable
 
 WSLg's X server is running on display 0. The DISPLAY environment variable must have the value :0 for GUI application to connect to the right display. You can verify what the value of your DISPLAY environment variable is per below.
